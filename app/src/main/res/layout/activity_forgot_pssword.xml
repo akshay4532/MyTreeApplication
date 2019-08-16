@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ForgotPsswordActivity"
+    android:background="@drawable/forgot">
+
+
+    <LinearLayout
+        android:layout_marginTop="320dp"
+       android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+                     <TextView
+                    android:background="@drawable/edit_style_back"
+                    android:text="@string/forgot_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aclonica"
+                    android:textColor="#5E293E"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+        <View
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#6C8B10" />
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressbarForgot"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="30dp"
+                android:textColorHint="#120C63"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:inputType="textEmailAddress"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Registered Email Id *"
+                    android:id="@+id/emailAlrdyReg"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+            <!--android:textColorHint="#110D0D"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:passwordToggleEnabled="true">-->
+
+            <!--<com.google.android.material.textfield.TextInputEditText-->
+            <!--android:inputType="textPassword"-->
+            <!--android:background="@drawable/edit_style"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:hint="Create New Password"-->
+            <!--android:id="@+id/crtPass"/>-->
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+            <Button
+                android:fontFamily="@font/croissant_one"
+                android:backgroundTint="#1F2574"
+                android:elevation="20dp"
+                android:layout_margin="14dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_corner_button"
+                android:textColor="#fff"
+                android:id="@+id/AlrdysendReg_btn"
+                android:text="Send"
+                android:textStyle="bold"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:layout_weight="1">
+    <LinearLayout
+        android:weightSum="4"
+        android:layout_marginHorizontal="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".student.Profile"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:background="@drawable/back_stroke"
+            android:layout_weight="4"
+            android:id="@+id/fir_rel"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+
+            <LinearLayout
+                android:weightSum="2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="50dp"
+                android:orientation="vertical">
+
+                <!--<de.hdodenhof.circleimageview.CircleImageView-->
+                <!--android:id="@+id/imageProfile"-->
+                <!--android:layout_gravity="center_horizontal"-->
+                <!--android:layout_marginTop="35dp"-->
+                <!--android:layout_width="150dp"-->
+                <!--android:layout_height="150dp"-->
+                <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wallpr"/>
+
+
+            </LinearLayout>
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_marginLeft="30dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="139dp"
+                android:src="@drawable/icon"
+                android:id="@+id/img1"
+                app:civ_border_color="#061430"
+                app:civ_border_width="2dp"
+                app:civ_shadow_gravity="center"
+                app:civ_shadow_color="#3f51b5"
+                app:civ_shadow_radius="6" />
+
+            <TextView
+                android:background="@drawable/edit_style_back"
+                android:layout_marginTop="240dp"
+                android:id="@+id/topname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="190dp"
+                android:text="Wiliam Snoe"
+                android:textColor="#031133"
+                android:textSize="14sp"
+                android:textStyle="bold|italic"
+                android:clickable="true"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:id="@+id/fab"
+                app:borderWidth="5dp"
+                app:elevation="6dp"
+                app:fabSize="mini"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="235dp"
+                android:src="@drawable/ic_linked_camera_black_24dp"
+                app:backgroundTint="#85E6B770" />
+        </RelativeLayout>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Details Below : "
+            android:textColor="#611515"
+            android:textStyle="bold"
+            android:textSize="21sp"/>
+
+        <View
+        android:layout_weight="1"
+            android:layout_width="200dp"
+            android:layout_marginLeft="100dp"
+            android:layout_height="3dp"
+            android:background="#449EE2"/>
+
+
+        <LinearLayout
+            android:background="@drawable/back_stroke"
+        android:layout_marginTop="10dp"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <androidx.cardview.widget.CardView
+                    android:background="@drawable/edit_style_back"
+                app:cardBackgroundColor="#23C0E4E4"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_person_black_24dp"/>
+
+                        <TextView
+                            android:id="@+id/profInnername"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="20dp"
+                            android:text="Name"
+                            android:textStyle="bold" />
+                        <ImageView
+                            android:layout_marginHorizontal="150dp"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_mode_edit_black"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:paddingLeft="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_email_black_24dp"/>
+                        <TextView
+                            android:id="@+id/emailProfile"
+                            android:textStyle="bold"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="Wiliam@gmail.com"/>
+                        <ImageView
+                            android:layout_marginHorizontal="95dp"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_mode_edit_black"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="3dp"
+                        android:orientation="horizontal"
+                        android:paddingLeft="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_phone_iphone_black_24dp"/>
+                        <TextView
+                            android:textStyle="bold"
+                            android:id="@+id/contactProfile"
+                            android:layout_gravity="center_vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:text="+266 225 225"/>
+                        <ImageView
+                            android:layout_marginHorizontal="100dp"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_mode_edit_black"/>
+                    </LinearLayout>
+                    <!--<LinearLayout-->
+                    <!--android:layout_marginTop="25dp"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:paddingLeft="25dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+                    <!--<ImageView-->
+                    <!--android:layout_width="36dp"-->
+                    <!--android:layout_height="36dp"-->
+                    <!--android:src="@drawable/group"/>-->
+                    <!--<TextView-->
+                    <!--android:textStyle="bold"-->
+
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:paddingLeft="20dp"-->
+                    <!--android:text="Add to group"/>-->
+                    <!--</LinearLayout>-->
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <Button
+            android:padding="3dp"
+            android:visibility="visible"
+            android:layout_marginTop="18dp"
+            android:id="@+id/profileLogout"
+            android:background="@drawable/circleshape_login"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:paddingTop="10dp"
+            android:textAllCaps="false"
+            android:textColor="#ffff"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Save"/>
+    </LinearLayout>
+
+
+</ScrollView>

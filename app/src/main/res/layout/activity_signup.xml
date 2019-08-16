@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:background="@drawable/new_signtre">
+
+
+    <LinearLayout
+        android:id="@+id/lay1"
+        android:layout_marginTop="225dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginLeft="9dp"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/secondaryTextColor"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:textColorHint="#1F2574">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:textStyle="bold"
+                android:backgroundTint="@color/secondaryLightColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:hint=" Enter Your Name *"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginLeft="9dp"
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/secondaryTextColor"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true"
+            android:textColorHint="#1F2574">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/mob"
+
+                android:inputType="phone"
+                android:textStyle="bold"
+                android:backgroundTint="@color/secondaryLightColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:drawableStart="@drawable/ic_phone_iphone_black_24dp"
+                android:hint=" Enter your Mobile Number *"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginLeft="9dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#1F2574">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:padding="12dp"
+                android:drawableStart="@drawable/ic_email_black_24dp"
+                android:textStyle="bold"
+                
+                android:backgroundTint="@color/secondaryLightColor"
+                android:id="@+id/mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=" Enter Email_id *"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginLeft="9dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="#1F2574"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:padding="12dp"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
+                android:textStyle="bold"
+                android:inputType="textPassword"
+                android:backgroundTint="@color/secondaryLightColor"
+                android:id="@+id/pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=" Create New password *"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:backgroundTint="@color/secondaryTextColor"
+            android:layout_height="wrap_content"
+            android:textColorHint="#1F2574">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_marginLeft="12dp"
+            android:padding="15dp"
+            android:drawableStart="@drawable/ic_domain_black_24dp"
+            android:id="@+id/org"
+            android:textStyle="bold"
+            android:backgroundTint="@color/secondaryLightColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=" Enter Organisation Name (optional)*"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textColor="#ECE1E1"
+            android:id="@+id/btn_sub"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circleshape"
+            android:fontFamily="@font/croissant_one"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textSize="18dp" />
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progress_sign"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
+</ScrollView>

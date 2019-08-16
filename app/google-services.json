@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "243031128545",
+    "firebase_url": "https://mytreeapplication-901af.firebaseio.com",
+    "project_id": "mytreeapplication-901af",
+    "storage_bucket": "mytreeapplication-901af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:243031128545:android:3f33b251be5c5077",
+        "android_client_info": {
+          "package_name": "com.example.mytreeapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "243031128545-71tmbtof20rv5f3s172dsqt070jk9gdf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mytreeapplication",
+            "certificate_hash": "065edb2941693c433ba27548464abdcafab9c9c6"
+          }
+        },
+        {
+          "client_id": "243031128545-g2295ve168h6ksogp913upkhql2u454k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4NKHVutFXB-KX9LhlSYYaeC-VT1wqbN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "243031128545-g2295ve168h6ksogp913upkhql2u454k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
