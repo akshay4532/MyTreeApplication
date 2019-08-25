@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -35,7 +36,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.mikhaellopez.circularimageview.CircularImageView;
-import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -68,6 +68,7 @@ public class ProfileActivity extends AppCompatActivity {
 //    CircularImageView cirImg;
         Uri photoUri;
     String currentPhotoPath;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +87,8 @@ public class ProfileActivity extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
 
         mStorageRef= FirebaseStorage.getInstance().getReference();
-
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Profile pic Uploading...");
 
         firebaseAuth=FirebaseAuth.getInstance();
         firebaseDatabase=FirebaseDatabase.getInstance();
@@ -142,6 +144,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode,resultCode,data);
         if(resultCode==RESULT_OK && requestCode==REQUEST_TAKE_PHOTO){
+            progressDialog.show();
             try{
                 bitmap=MediaStore.Images.Media.getBitmap(this.getContentResolver(),photoUri);
                 img.setImageBitmap(bitmap);
@@ -161,9 +164,30 @@ public class ProfileActivity extends AppCompatActivity {
         return Bitmap.createScaledBitmap(bitmap, 240, 240, false);
     }
     private StorageReference mStorageRef;
+    private void loadPic(){
+        mStorageRef= FirebaseStorage.getInstance().getReference();
+        final StorageReference storageReference=mStorageRef.child("profile_pic")
+                .child(FirebaseAuth.getInstance().getUid()+".jpg");
+        final Uri[] imgUrl={null};
+        storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                imgUrl[0]=Uri.parse(uri.toString());
+                Log.d("success ",uri.toString());
+                Log.d("Url ","url : "+storageReference.getDownloadUrl());
+                // Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+
+                // Picasso.get().load(uri).into(img);
+                // img.setImageBitmap(Bitmap.createBitmap(bitmap));
+                Glide.with(ProfileActivity.this).load(imgUrl[0]).into(img);
+                Toast.makeText(ProfileActivity.this, "Success "+uri, Toast.LENGTH_SHORT).show();
+            }
+        });
+       // Glide.with(ProfileActivity.this).load(storageReference).into(img);
+    }
     private void addToStorage() {
         mStorageRef= FirebaseStorage.getInstance().getReference();
-        final StorageReference storageReference=mStorageRef.child("profile pic")
+        final StorageReference storageReference=mStorageRef.child("profile_pic")
                 .child(FirebaseAuth.getInstance().getUid()+".jpg");
 
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
@@ -175,26 +199,29 @@ public class ProfileActivity extends AppCompatActivity {
                 // Get a URL to the uploaded content
                     Log.d(TAG,taskSnapshot.toString());
 
-                Glide.with(getApplicationContext()).load(taskSnapshot).into(img);
                 Toast.makeText(ProfileActivity.this, "Successfully Loaded", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(ProfileActivity.this, "Error in uploading...", Toast.LENGTH_SHORT).show();
                 Log.d(TAG,e.getMessage());
+                progressDialog.dismiss();
             }
         });
-
+        final Uri[] imgUrl={null};
         storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
+                imgUrl[0]=Uri.parse(uri.toString());
                 Log.d("success ",uri.toString());
                 Log.d("Url ","url : "+storageReference.getDownloadUrl());
                // Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
 
                // Picasso.get().load(uri).into(img);
-                img.setImageBitmap(Bitmap.createBitmap(bitmap));
+               // img.setImageBitmap(Bitmap.createBitmap(bitmap));
+                Glide.with(ProfileActivity.this).load(imgUrl[0]).into(img);
                 Toast.makeText(ProfileActivity.this, "Success "+uri, Toast.LENGTH_SHORT).show();
             }
         });
@@ -219,7 +246,9 @@ public class ProfileActivity extends AppCompatActivity {
         return true;
     }
 
-
-
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        loadPic();
+    }
 }
